@@ -77,9 +77,6 @@ namespace kolokwium1poprawa.Services
             return res;
         }
 
-        public IEnumerable<Patient> GetPatient(int IdPatient)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

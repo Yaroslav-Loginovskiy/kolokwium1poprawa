@@ -11,7 +11,7 @@ namespace kolokwium1poprawa.Services
     {
         public IEnumerable<Medicament> GetMedicament(int IdMedicament);
         void DeletePatient(int idPatient);
-        public IEnumerable<Patient> GetPatient(int IdPatient);
+      
 
     }
 }
