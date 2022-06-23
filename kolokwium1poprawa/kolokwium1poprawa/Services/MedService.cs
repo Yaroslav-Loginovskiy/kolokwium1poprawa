@@ -17,21 +17,36 @@ namespace kolokwium1poprawa.Services
         {
             _configuration = configuration;
         }
-        public ActionResult<Patient> DeletePatient(int idPatient)
+        public void DeletePatient(int patientId)
         {
             using ( var con = new SqlConnection(_configuration.GetConnectionString("Default")))
             {
                 con.Open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = con;
-                command.CommandText = $"SELECT IdPrescription FROM Prescription WHERE IdPatient = @idPatient";
-                command.Parameters.AddWithValue("@idPatient", idPatient);
-                command.CommandText = $"DELETE FROM Prescription WHERE IdPatient = {idPatient}";
-                command.ExecuteScalar();
 
-                command.CommandText = $"DELETE FROM Patient WHERE IdPatient = {idPatient}";
-                command.ExecuteScalar();
-                return null;
+                command.CommandText = $"SELECT IdPrescription FROM Prescription WHERE IdPatient = @patientId";
+                command.Parameters.AddWithValue("@idPatient", patientId);//get idprescriptions with particular patient id
+
+                var exec = command.ExecuteReader();
+                List<int> prescriptionIds = new List<int>();
+                while (exec.Read())
+                {
+                    prescriptionIds.Add(int.Parse(exec["IdPrescription"].ToString()));
+                }
+                exec.Close();
+                for (int i = 0; i < prescriptionIds.Count; i++)
+                {
+                    command.CommandText = $"DELETE FROM Prescription_Medicament WHERE IdPrescription = {prescriptionIds[i]}";
+                    command.ExecuteScalar();//delete rows from associated table
+                }
+
+                command.CommandText = $"DELETE FROM Prescription WHERE IdPatient = {patientId}";
+                command.ExecuteScalar(); // delete from prescription
+
+                command.CommandText = $"DELETE FROM Patient WHERE IdPatient = {patientId}";
+                command.ExecuteScalar();//delete from patient
+                
             }
         }
 
@@ -40,8 +55,7 @@ namespace kolokwium1poprawa.Services
             var res = new List<Medicament>();
             using ( var con = new SqlConnection(_configuration.GetConnectionString("Default")))
             {
-                var com =
-                    new SqlCommand($"SELECT Medicamen, Name, Description, Type, Prescription.Date FROM Medicament"
+                var com = new SqlCommand($"SELECT Medicamen, Name, Description, Type, Prescription.Date FROM Medicament"
                                        + "INNER JOIN PrescriptionMedicament ON Medicament.IdMedicament = PrescriptionMedicament.IdMedicament"
                                        + "INNER JOIN Prescription ON PrescriptionMedicament.IdPrescription = Prescription.IdPrescription "
                                        + "ORDER BY [Date] DESC", con);

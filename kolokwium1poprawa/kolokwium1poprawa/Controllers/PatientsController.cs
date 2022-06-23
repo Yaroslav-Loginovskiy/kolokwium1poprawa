@@ -23,21 +23,12 @@ namespace kolokwium1poprawa.Controllers
         [HttpDelete("{idPatient}")]
         public async Task<ActionResult<Patient>> DeletePatients(int idPatient)
         {
-            try
-            {
-                var patientToDelete = _service.GetPatient(idPatient);
-
-                if (patientToDelete == null)
-                {
-                    return NotFound($"Patient has not been founded");
-                }
-
-                return _service.DeletePatient(idPatient);
-            }
-            catch (Exception)
+            if (idPatient == 0)
             {
                 return BadRequest();
             }
+            _service.DeletePatient(idPatient);
+            return Ok("Patient has been deleted");
         }
     }
 }

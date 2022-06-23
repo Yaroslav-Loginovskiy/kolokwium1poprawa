@@ -10,7 +10,7 @@ namespace kolokwium1poprawa.Services
    public interface IMedService
     {
         public IEnumerable<Medicament> GetMedicament(int IdMedicament);
-        ActionResult<Patient> DeletePatient(int idPatient);
+        void DeletePatient(int idPatient);
         public IEnumerable<Patient> GetPatient(int IdPatient);
 
     }
