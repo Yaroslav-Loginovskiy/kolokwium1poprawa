@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\S22129\\Desktop\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa.csproj": {}
+    "C:\\Users\\s22129\\Desktop\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa.csproj": {}
   },
   "projects": {
-    "C:\\Users\\S22129\\Desktop\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa.csproj": {
+    "C:\\Users\\s22129\\Desktop\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\S22129\\Desktop\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa.csproj",
+        "projectUniqueName": "C:\\Users\\s22129\\Desktop\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa.csproj",
         "projectName": "kolokwium1poprawa",
-        "projectPath": "C:\\Users\\S22129\\Desktop\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa.csproj",
-        "packagesPath": "C:\\Users\\S22129\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\S22129\\Desktop\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\obj\\",
+        "projectPath": "C:\\Users\\s22129\\Desktop\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa.csproj",
+        "packagesPath": "C:\\Users\\s22129\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\s22129\\Desktop\\kolokwium1poprawa\\kolokwium1poprawa\\kolokwium1poprawa\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\S22129\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\s22129\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
