@@ -21,7 +21,7 @@ namespace kolokwium1poprawa.Controllers
         }
 
         [HttpDelete("{idPatient}")]
-        public async Task<ActionResult<Patient>> DeletePatients(int idPatient)
+        public IActionResult DeletePatients(int idPatient)
         {
             if (idPatient == 0)
             {
